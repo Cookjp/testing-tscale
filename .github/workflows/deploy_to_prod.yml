@@ -10,10 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: print
+          env:
+            TAIL_VAR_1: ${{  secrets.TAILSCALE_AUTHKEY }}
           run: |
-            echo "${{ env.TAIL_VAR }}"
+            echo "$TAIL_VAR_1"
         - name: Tailscale
+          env:
+            TAIL_VAR_1: ${{  secrets.TAILSCALE_AUTHKEY }}
           uses: tailscale/github-action@v1
           with:
-            authkey: ${{ env.TAIL_VAR }}
+            authkey: $TAIL_VAR_1
             version: 1.36.2 
