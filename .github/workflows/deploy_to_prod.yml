@@ -11,9 +11,9 @@ jobs:
     steps:
         - name: print
           run: |
-            echo "${{ secrets.TAILSCALE_AUTHKEY }}"
+            echo "${{ env.TAIL_VAR }}"
         - name: Tailscale
           uses: tailscale/github-action@v1
           with:
-            authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+            authkey: ${{ env.TAIL_VAR }}
             version: 1.36.2 
