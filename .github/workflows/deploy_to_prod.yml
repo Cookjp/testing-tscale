@@ -9,8 +9,11 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
+        - name: print
+          run: |
+            echo ${{ secrets.TAILSCALE_AUTHKEY }}
         - name: Tailscale
           uses: tailscale/github-action@v1
           with:
             authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-            version: 1.36.2
+            version: 1.36.2 
