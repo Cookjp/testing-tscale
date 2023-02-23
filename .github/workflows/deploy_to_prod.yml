@@ -11,12 +11,12 @@ jobs:
     steps:
         - name: print
           env:
-            TAIL_VAR_1: ${{  secrets.TAILSCALE_AUTHKEY }}
+            TAIL_VAR_1: ${{ secrets.TAILSCALE_AUTHKEY }}
           run: |
             echo "$TAIL_VAR_1"
         - name: Tailscale
           env:
-            TAIL_VAR_1: ${{  secrets.TAILSCALE_AUTHKEY }}
+            TAIL_VAR_1: ${{ secrets.TAILSCALE_AUTHKEY }}
           uses: tailscale/github-action@v1
           with:
             authkey: $TAIL_VAR_1
