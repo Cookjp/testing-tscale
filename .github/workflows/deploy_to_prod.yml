@@ -11,7 +11,7 @@ jobs:
     steps:
         - name: print
           run: |
-            echo ${{ secrets.TAILSCALE_AUTHKEY }}
+            echo "${{ secrets.TAILSCALE_AUTHKEY }}"
         - name: Tailscale
           uses: tailscale/github-action@v1
           with:
